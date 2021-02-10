@@ -1,0 +1,49 @@
+html {
+  font-size: 50%; // 1rem = 8px (8/16)
+
+  @include mq(tab) {
+    font-size: 62.5%; // 1rem = 10px (10/16)
+  }
+}
+
+body {
+  font-family: $basic-font-light;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  letter-spacing: 0.2px;
+  color: $black;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.heading {
+  line-height: 1.3;
+}
+
+.heading-brand {
+  line-height: 1;
+  font-family: $deco-font-bold;
+  color: $white;
+  display: flex;
+  align-items: center;
+  font-size: 2.8rem;
+  margin: 0 1rem 0 0;
+
+  .iconify {
+    color: $color-primary;
+    font-size: 4rem;
+    margin-right: 0.5rem;
+  }
+
+  &--link {
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+}
+
+.deco-light {
+  font-family: $deco-font-light;
+}
