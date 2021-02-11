@@ -1,0 +1,23 @@
+.margin-bottom-xs {
+  margin-bottom: 0.5rem !important;
+
+  @include mq(tab) {
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+.margin-bottom-sm {
+  margin-bottom: 2rem !important;
+
+  @include mq(tab) {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+.margin-bottom-md {
+  margin-bottom: 3rem !important;
+
+  @include mq(tab) {
+    margin-bottom: 2rem !important;
+  }
+}

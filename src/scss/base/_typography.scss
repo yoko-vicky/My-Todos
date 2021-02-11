@@ -1,0 +1,19 @@
+html {
+  font-size: 50%; // 1rem = 8px (8/16)
+
+  @include mq(tab) {
+    font-size: 62.5%; // 1rem = 10px (10/16)
+  }
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  letter-spacing: 0.2px;
+  color: $black;
+}
+
+p {
+  font-size: 1.5rem;
+}
