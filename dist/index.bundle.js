@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var uuid
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// import getSavedProjectsFromLS from './getSavedProjectsFromLS';\nconst removeProject = (projectId, projects) => {\n  // const projects = getSavedProjectsFromLS();\n  const targetIndex = projects.findIndex(project => project.id === projectId);\n\n  if (targetIndex >= 0) {\n    projects.splice(targetIndex, 1);\n    localStorage.setItem('projects', JSON.stringify(projects));\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (removeProject);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/removeProject.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst removeProject = (projectId, projects) => {\n  const targetIndex = projects.findIndex(project => project.id === projectId);\n\n  if (targetIndex >= 0) {\n    projects.splice(targetIndex, 1);\n    localStorage.setItem('projects', JSON.stringify(projects));\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (removeProject);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/removeProject.js?");
 
 /***/ }),
 
