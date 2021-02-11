@@ -1,0 +1,184 @@
+.container {
+  width: $basic-width;
+  max-width: $basic-max-width;
+  margin: 4rem auto;
+}
+
+.main-heading {
+  font-size: 6rem;
+  text-align: center;
+  margin: 0 auto 1rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 2rem;
+
+  @include mq(tab) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(laptap) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project {
+  border: 5px solid $light-grey-1;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+
+  &__rmbtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: $grey;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 3px;
+    padding: 1.6rem;
+
+    &.add-todo-form {
+      background: rgba($black, 0.2);
+      margin: 1rem auto 2rem;
+    }
+
+    &.edit-todo-form {
+      background: $white;
+      margin: 1rem auto 0;
+    }
+
+    &.add-project-form {
+      width: $basic-width;
+      max-width: 54rem;
+      margin: 0 auto 5rem;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    margin: 0 auto 0.4rem;
+
+    span {
+      display: block;
+      margin-right: 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.4rem;
+    }
+  }
+
+  &__todos {
+    margin: 1rem auto 0;
+  }
+}
+
+.todo {
+  position: relative;
+  text-align: left;
+  padding: 1rem;
+  background: $light-grey-2;
+  margin: 0 auto 1rem;
+  border: 2px solid $light-grey-2;
+
+  &.high {
+    background: rgba($color-primary, 0.4);
+  }
+
+  &.middle {
+    background: rgba($color-primary, 0.1);
+  }
+
+  // &.low {
+  //   background: $white;
+  //   color: $grey;
+  // }
+
+  &__rmbtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__due {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 auto 0.4rem;
+  }
+
+  &__title-cover {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__comp-checkbox {
+    margin-right: 1rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin: 0 0 0.4rem;
+    line-height: 1;
+  }
+
+  &__more {
+    display: none;
+    margin-top: 1rem;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__desc {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    // color: $grey;
+    text-align: left;
+    margin: 0 auto 0.6rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  background: $black;
+  padding: 0.6rem;
+  color: $white;
+  width: 100%;
+  margin: 0.6rem auto;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: all 0.4s;
+
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+}
