@@ -12,10 +12,10 @@
     <main class="main">
       <form class="project__form add-project-form">
         <div class="project__field">
-          <span>Project title (min 3 max 22):</span><input type="text" name="pr-title" min=3 max=22>
+          <span>Project title (min 3 max 22):</span><input type="text" name="prTitle" min=3 max=22>
         </div>
         <div class="project__field">
-          <span>Project description (min 5 max 150):</span><textarea name="todo-desc" cols="40" rows="2" min=3 max=150></textarea>
+          <span>Project description (min 5 max 150):</span><textarea name="prDesc" cols="40" rows="2" min=3 max=150></textarea>
         </div>
         <button class="btn">Add project</button>
       </form>
@@ -39,17 +39,17 @@
                 <p class="todo__desc">Lorem ipsum, dolor sit amet consectetur adipisicing edivt. Quas amet illum libero temporibus et omnis hic excepturi (120)</p>
                 <form class="project__form edit-todo-form">
                   <div class="project__field">
-                    <span>Title:</span><input type="text" name="todo-title">
+                    <span>Title:</span><input type="text" name="todoTitle" required>
                   </div>
                   <div class="project__field">
-                    <span>Description:</span><input type="text" name="todo-desc">
+                    <span>Description:</span><input type="text" name="todoDesc" required>
                   </div>
                   <div class="project__field">
-                    <span>Due:</span><input type="date" name="todo-due">
+                    <span>Due:</span><input type="date" name="todoDue" required>
                   </div>
                   <div class="project__field">
                     <span>Priority:</span>
-                    <select name="priority">
+                    <select name="todoPriority">
                       <option value="1">High</option>
                       <option value="2">Middle</option>
                       <option value="3">Low</option>
@@ -62,17 +62,17 @@
           </div>
           <form class="project__form add-todo-form">
             <div class="project__field">
-              <span>Title:</span><input type="text" name="todo-title">
+              <span>Title:</span><input type="text" name="todoTitle" required>
             </div>
             <div class="project__field">
-              <span>Description:</span><textarea name="todo-desc" cols="40" rows="2"></textarea>
+              <span>Description:</span><textarea name="todoDesc" cols="40" rows="2" required></textarea>
             </div>
             <div class="project__field">
-              <span>Due:</span><input type="date" name="todo-due">
+              <span>Due:</span><input type="date" name="todoDue" required>
             </div>
             <div class="project__field">
               <span>Priority:</span>
-              <select name="priority">
+              <select name="todoPriority">
                 <option value="1">High</option>
                 <option value="2">Middle</option>
                 <option value="3">Low</option>
