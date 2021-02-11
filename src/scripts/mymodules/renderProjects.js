@@ -1,3 +1,5 @@
+import removeProject from './removeProject';
+
 const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   const prField = document.createElement('div');
   prField.classList.add('project__field');
@@ -105,13 +107,19 @@ const generatePrTodosDOM = (project) => {
   return projectTodos;
 };
 
-const generateProjectItemDOM = (project) => {
+const generateProjectItemDOM = (project, projects) => {
   const prItem = document.createElement('div');
   prItem.classList.add('project');
 
   const prRmBtn = document.createElement('button');
   prRmBtn.classList.add('project__rmbtn');
   prRmBtn.textContent = 'x';
+
+  prRmBtn.addEventListener('click', () => {
+    removeProject(project.id, projects);
+    window.location.reload();
+    // renderProjects(projects);
+  });
 
   const prTitle = document.createElement('h2');
   prTitle.classList.add('project__title');
@@ -133,7 +141,7 @@ const projectsContainer = document.getElementById('projects');
 const renderProjects = (projects) => {
   projectsContainer.innerHTML = '';
   projects.forEach(project => {
-    projectsContainer.appendChild(generateProjectItemDOM(project));
+    projectsContainer.appendChild(generateProjectItemDOM(project, projects));
   });
 };
 
