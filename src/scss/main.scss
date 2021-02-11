@@ -2,4 +2,10 @@
 @import "abstracts/mixins";
 @import "base/base";
 @import "base/typography";
-@import "pages/home";
+@import "base/utilities";
+@import "components/container";
+@import "components/header";
+@import "components/footer";
+@import "components/projects";
+@import "components/project";
+@import "components/todo";

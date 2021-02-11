@@ -1,0 +1,66 @@
+.todo {
+  position: relative;
+  text-align: left;
+  padding: 1rem;
+  background: $light-grey-2;
+  margin: 0 auto 1rem;
+  border: 2px solid $light-grey-2;
+
+  &.high {
+    background: rgba($color-primary, 0.4);
+  }
+
+  &.middle {
+    background: rgba($color-primary, 0.1);
+  }
+
+  // &.low {
+  //   background: $white;
+  //   color: $grey;
+  // }
+
+  &__rmbtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__due {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 auto 0.4rem;
+  }
+
+  &__title-cover {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__comp-checkbox {
+    margin-right: 1rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin: 0 0 0.4rem;
+    line-height: 1;
+  }
+
+  &__more {
+    display: none;
+    margin-top: 1rem;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__desc {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    // color: $grey;
+    text-align: left;
+    margin: 0 auto 0.6rem;
+  }
+}
