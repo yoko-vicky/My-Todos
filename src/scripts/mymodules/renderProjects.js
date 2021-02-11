@@ -1,5 +1,3 @@
-const projectsContainer = document.getElementById('projects');
-
 const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   const prField = document.createElement('div');
   prField.classList.add('project__field');
@@ -131,7 +129,9 @@ const generateProjectItemDOM = (project) => {
   return prItem;
 };
 
+const projectsContainer = document.getElementById('projects');
 const renderProjects = (projects) => {
+  projectsContainer.innerHTML = '';
   projects.forEach(project => {
     projectsContainer.appendChild(generateProjectItemDOM(project));
   });
