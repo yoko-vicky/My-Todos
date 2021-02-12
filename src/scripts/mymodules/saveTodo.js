@@ -30,7 +30,6 @@ const saveTodo = (e, project, projects, formClassName, todo) => {
 
   localStorage.setItem('projects', JSON.stringify(projects));
   clearFieldOfTodo(e);
-  // window.location.reload();
   renderProjects(projects);
 };
 

@@ -1,4 +1,5 @@
 import removeProject from './removeProject';
+// eslint-disable-next-line import/no-cycle
 import saveTodo from './saveTodo';
 // eslint-disable-next-line import/no-cycle
 import removeTodo from './removeTodo';
@@ -142,7 +143,6 @@ const generateProjectItemDOM = (project, projects) => {
 
   prRmBtn.addEventListener('click', () => {
     removeProject(project.id, projects);
-    // window.location.reload();
     // eslint-disable-next-line no-use-before-define
     renderProjects(projects);
   });

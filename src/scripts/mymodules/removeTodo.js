@@ -6,7 +6,6 @@ const removeTodo = (todo, project, projects) => {
   if (targetIndex >= 0) {
     project.todos.splice(targetIndex, 1);
     localStorage.setItem('projects', JSON.stringify(projects));
-    // window.location.reload();
     renderProjects(projects);
   }
 };
