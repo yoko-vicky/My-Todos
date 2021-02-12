@@ -1,0 +1,14 @@
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: $grey;
+  text-transform: uppercase;
+
+  a {
+    color: $grey;
+    text-decoration: underline;
+  }
+}

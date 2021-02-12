@@ -1,23 +1,20 @@
-.margin-bottom-xs {
-  margin-bottom: 0.5rem !important;
+.btn {
+  display: inline-block;
+  background: $black;
+  padding: 0.6rem;
+  color: $white;
+  width: 100%;
+  margin: 0.6rem auto;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: all 0.4s;
 
-  @include mq(tab) {
-    margin-bottom: 0.8rem !important;
-  }
-}
-
-.margin-bottom-sm {
-  margin-bottom: 2rem !important;
-
-  @include mq(tab) {
-    margin-bottom: 1.5rem !important;
-  }
-}
-
-.margin-bottom-md {
-  margin-bottom: 3rem !important;
-
-  @include mq(tab) {
-    margin-bottom: 2rem !important;
+  &:hover {
+    background: $white;
+    color: $black;
   }
 }

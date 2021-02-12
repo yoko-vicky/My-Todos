@@ -6,35 +6,90 @@
   <title>My Todo List</title>
 </head>
 <body>
-    <div class="container">
-    <h1>My Projects</h1>
+  <div class="container">
+    <header class="header"><h1 class="main-heading">My Todos</h1></header>
 
-    <div id="projects" class="projects">
-      <div class="project">
-        <h2 class="project__title">Morning Routine</h2>
-        <div class="project__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, modi molestias in architecto minima nobis accusantium expedita natus laborum quae libero sapiente deleniti. Laudantium iste maxime esse qui iusto. Nulla.</div>
-        <div class="todos">
-          <ul class="todos__list">
-            <li class="todo">
-              <button class="todo__rmbtn">x</button>
-              <h3 class="todo__title">Clean the room</h3>
-              <p class="todo__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas amet illum libero temporibus et omnis hic excepturi</p>
-              <div class="todo__due">dueDate: 2021-03-02</div>
-              <div class="todo__priority">1</div>
-              <div class="todo__comp">
-                <input type="checkbox" class="todo__comp-checkbox">
-                <span>Completed</span>
-              </div>
-            </li>
-          </ul>
+    <main class="main">
+      <form class="project__form add-project-form">
+        <div class="project__field">
+          <span>Project title (min 3 max 22):</span><input type="text" name="prTitle" min=3 max=22>
         </div>
+        <div class="project__field">
+          <span>Project description (min 5 max 150):</span><textarea name="prDesc" cols="40" rows="2" min=3 max=150></textarea>
+        </div>
+        <button class="btn">Add project</button>
+      </form>
+
+      <div id="projects" class="projects">
+
+        <div class="project">
+          <button class="project__rmbtn">x</button>
+          <h2 class="project__title">Morning Routine(22)</h2>
+          <div class="project__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, modikLorem, ipsum dolor sit amet consectetur adipissit amet consectetur adipisaaa</div>
+          <div class="project__todos">
+            <div class="todo high">
+              <button class="todo__rmbtn">x</button>
+              <div class="todo__due">Due: 2021-03-02</div>
+              <div class="todo__title-cover">
+                <input type="checkbox" class="todo__comp-checkbox">
+                <h3 class="todo__title">Wash the dishes(29)</h3>
+              </div>
+              <button class="todo__morebtn btn">More</button>
+              <div class="todo__more">
+                <p class="todo__desc">Lorem ipsum, dolor sit amet consectetur adipisicing edivt. Quas amet illum libero temporibus et omnis hic excepturi (120)</p>
+                <form class="project__form edit-todo-form">
+                  <div class="project__field">
+                    <span>Title:</span><input type="text" name="todoTitle" required>
+                  </div>
+                  <div class="project__field">
+                    <span>Description:</span><input type="text" name="todoDesc" required>
+                  </div>
+                  <div class="project__field">
+                    <span>Due:</span><input type="date" name="todoDue" required>
+                  </div>
+                  <div class="project__field">
+                    <span>Priority:</span>
+                    <select name="todoPriority">
+                      <option value="1">High</option>
+                      <option value="2">Middle</option>
+                      <option value="3">Low</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn">Save Todo</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <form class="project__form add-todo-form">
+            <div class="project__field">
+              <span>Title:</span><input type="text" name="todoTitle" required>
+            </div>
+            <div class="project__field">
+              <span>Description:</span><textarea name="todoDesc" cols="40" rows="2" required></textarea>
+            </div>
+            <div class="project__field">
+              <span>Due:</span><input type="date" name="todoDue" required>
+            </div>
+            <div class="project__field">
+              <span>Priority:</span>
+              <select name="todoPriority">
+                <option value="1">High</option>
+                <option value="2">Middle</option>
+                <option value="3">Low</option>
+              </select>
+            </div>
+            <button type="submit" class="btn">Add Todo</button>
+          </form>
+        </div>
+
       </div>
-    </div>
+    </main>
 
-  </div>
-  <!-- container -->
+    <footer class="footer">
+      &copy; Designed by <a href="https://github.com/yocosaka">Yoko Saka</a> 2021
+    </footer>
+  </div><!-- container -->
 
-  <script src="./functions.bundle.js"></script>
   <script src="./index.bundle.js"></script>
 </body>
 </html>

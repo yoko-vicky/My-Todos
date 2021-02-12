@@ -79,3 +79,4 @@ This project is [MIT](./LICENSE) licensed.
 
 ## Acknowledgements
 * [Odin Project: Todo List](https://www.theodinproject.com/courses/javascript/lessons/todo-list)
+* [uuid](https://github.com/uuidjs/uuid)

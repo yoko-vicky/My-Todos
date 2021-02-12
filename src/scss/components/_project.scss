@@ -1,0 +1,84 @@
+.project {
+  border: 5px solid $light-grey-1;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+
+  &__rmbtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: $grey;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  &__field {
+    width: 100%;
+    margin: 0 auto 0.4rem;
+
+    span {
+      display: block;
+      margin-right: 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.4rem;
+      background: $white;
+      border-radius: 3px;
+    }
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 3px;
+    padding: 1.6rem;
+
+    &.add-todo-form {
+      background: rgba($black, 0.2);
+      margin: 1rem auto 2rem;
+    }
+
+    &.edit-todo-form {
+      background: $white;
+      margin: 1rem auto 0;
+
+      input,
+      select,
+      textarea {
+        border: 2px solid $light-grey-1;
+      }
+    }
+
+    &.add-project-form {
+      width: $basic-width;
+      max-width: 54rem;
+      margin: 0 auto 5rem;
+
+      input,
+      select,
+      textarea {
+        border: 2px solid $light-grey-1;
+      }
+    }
+  }
+
+  &__todos {
+    margin: 1rem auto 0;
+  }
+}

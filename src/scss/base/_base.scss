@@ -44,6 +44,7 @@ textarea {
   border-radius: 0;
   outline: none;
   appearance: none;
+  cursor: pointer;
 }
 
 select {
@@ -53,7 +54,8 @@ select {
   border: none;
   border-radius: 0;
   outline: none;
-  appearance: none;
+  // appearance: none;
+  cursor: pointer;
 }
 
 table {

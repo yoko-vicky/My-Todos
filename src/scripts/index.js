@@ -1,7 +1,14 @@
 import '../scss/main.scss';
-// import { formatDistance, subDays } from 'date-fns';
-// import Todo from './mymodules/todo';
+import getSavedProjectsFromLS from './mymodules/getSavedProjectsFromLS';
+import defaultTodos from './mymodules/defaultTodos';
+import renderProjects from './mymodules/renderProjects';
+import { addProject } from './mymodules/addProject';
 
+const projects = getSavedProjectsFromLS();
 
-// const myTodo = new Todo('Wash the dished', 'Wash dishes', new Date(2021, 3, 1), 3, false);
-// console.log(myTodo);
+if (projects.length === 0) {
+  localStorage.setItem('projects', JSON.stringify(defaultTodos));
+}
+
+renderProjects(projects);
+addProject(projects);

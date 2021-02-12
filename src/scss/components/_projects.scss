@@ -1,0 +1,12 @@
+.projects {
+  display: grid;
+  grid-gap: 2rem;
+
+  @include mq(tab) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(laptap) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
