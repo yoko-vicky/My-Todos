@@ -39,8 +39,5 @@
     "webpack": "^5.0.0-rc.6",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "uuid": "^3.4.0"
   }
 }

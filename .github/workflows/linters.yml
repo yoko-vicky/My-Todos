@@ -9,11 +9,6 @@ jobs:
   eslint:
     name: ESLint
     runs-on: ubuntu-18.04
-    settings:
-      import/resolver:
-        node:
-          extensions: [".js", ".jsx", ".ts", ".tsx"]
-          moduleDirectory: ['node_modules', 'src/']
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
