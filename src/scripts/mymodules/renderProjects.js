@@ -1,4 +1,5 @@
 import removeProject from './removeProject';
+import addTodo from './addTodo';
 
 const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   const prField = document.createElement('div');
@@ -17,9 +18,10 @@ const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   return prField;
 };
 
-const generateFormDOM = (formClassName) => {
+const generateFormDOM = (formClassName, project, projects) => {
   const form = document.createElement('form');
   form.classList.add(formClassName, 'project__form');
+  form.setAttribute('data-project-id', project.id);
   form.appendChild(generatePrFieldDOM('Title', 'text', 'todoTitle'));
   form.appendChild(generatePrFieldDOM('Description', 'text', 'todoDesc'));
   form.appendChild(generatePrFieldDOM('Due', 'date', 'todoDue'));
@@ -28,9 +30,9 @@ const generateFormDOM = (formClassName) => {
   prFieldForPriority.innerHTML = `
   <span>Priority:</span>
   <select name="todoPriority">
-    <option value="1">High</option>
-    <option value="2">Middle</option>
-    <option value="3">Low</option>
+    <option value="high">High</option>
+    <option value="middle">Middle</option>
+    <option value="low">Low</option>
   </select>
   `;
   form.appendChild(prFieldForPriority);
@@ -40,10 +42,14 @@ const generateFormDOM = (formClassName) => {
   prSaveTodoBtn.textContent = 'Save Todo';
   form.appendChild(prSaveTodoBtn);
 
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    addTodo(e, project, projects);
+  });
   return form;
 };
 
-const generateTodoMoreDOM = (todo) => {
+const generateTodoMoreDOM = (todo, project, projects) => {
   const todoMoreItem = document.createElement('div');
   todoMoreItem.classList.add('todo__more');
 
@@ -52,12 +58,12 @@ const generateTodoMoreDOM = (todo) => {
   todoDesc.textContent = todo.description;
 
   todoMoreItem.appendChild(todoDesc);
-  todoMoreItem.appendChild(generateFormDOM('edit-todo-form'));
+  todoMoreItem.appendChild(generateFormDOM('edit-todo-form', project, projects));
 
   return todoMoreItem;
 };
 
-const generateTodoItemDOM = (todo) => {
+const generateTodoItemDOM = (todo, project, projects) => {
   const todoItem = document.createElement('div');
   todoItem.classList.add('todo', todo.priority);
 
@@ -89,18 +95,18 @@ const generateTodoItemDOM = (todo) => {
   todoItem.appendChild(todoDue);
   todoItem.appendChild(todoTitleCover);
   todoItem.appendChild(todoMoreBtn);
-  todoItem.appendChild(generateTodoMoreDOM(todo));
+  todoItem.appendChild(generateTodoMoreDOM(todo, project, projects));
 
   return todoItem;
 };
 
-const generatePrTodosDOM = (project) => {
+const generatePrTodosDOM = (project, projects) => {
   const projectTodos = document.createElement('div');
   projectTodos.classList.add('project__todos');
 
   if (project.todos.length > 0) {
     project.todos.forEach(todo => {
-      projectTodos.appendChild(generateTodoItemDOM(todo));
+      projectTodos.appendChild(generateTodoItemDOM(todo, project, projects));
     });
   }
 
@@ -118,7 +124,6 @@ const generateProjectItemDOM = (project, projects) => {
   prRmBtn.addEventListener('click', () => {
     removeProject(project.id, projects);
     window.location.reload();
-    // renderProjects(projects);
   });
 
   const prTitle = document.createElement('h2');
@@ -132,8 +137,8 @@ const generateProjectItemDOM = (project, projects) => {
   prItem.appendChild(prRmBtn);
   prItem.appendChild(prTitle);
   prItem.appendChild(prDesc);
-  prItem.appendChild(generatePrTodosDOM(project));
-  prItem.appendChild(generateFormDOM('add-todo-form'));
+  prItem.appendChild(generatePrTodosDOM(project, projects));
+  prItem.appendChild(generateFormDOM('add-todo-form', project, projects));
   return prItem;
 };
 

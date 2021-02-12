@@ -20,4 +20,4 @@ const addProject = (projects) => {
   });
 };
 
-export default addProject;
+export { addProject, addProjectObjToProjects, addProjectsToLocalStorage };
