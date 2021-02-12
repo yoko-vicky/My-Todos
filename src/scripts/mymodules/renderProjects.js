@@ -1,5 +1,6 @@
 import removeProject from './removeProject';
 import addTodo from './addTodo';
+import removeTodo from './removeTodo';
 
 const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   const prField = document.createElement('div');
@@ -21,7 +22,6 @@ const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
 const generateFormDOM = (formClassName, project, projects) => {
   const form = document.createElement('form');
   form.classList.add(formClassName, 'project__form');
-  form.setAttribute('data-project-id', project.id);
   form.appendChild(generatePrFieldDOM('Title', 'text', 'todoTitle'));
   form.appendChild(generatePrFieldDOM('Description', 'text', 'todoDesc'));
   form.appendChild(generatePrFieldDOM('Due', 'date', 'todoDue'));
@@ -96,6 +96,8 @@ const generateTodoItemDOM = (todo, project, projects) => {
   todoItem.appendChild(todoTitleCover);
   todoItem.appendChild(todoMoreBtn);
   todoItem.appendChild(generateTodoMoreDOM(todo, project, projects));
+
+  todoRmBtn.addEventListener('click', () => removeTodo(todo, project, projects));
 
   return todoItem;
 };

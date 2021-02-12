@@ -9,6 +9,11 @@ const addProjectsToLocalStorage = (projects) => {
   localStorage.setItem('projects', JSON.stringify(projects));
 };
 
+const clearFieldOfProject = (e) => {
+  e.target.elements.prTitle.value = '';
+  e.target.elements.prDesc.value = '';
+};
+
 const addProject = (projects) => {
   const form = document.querySelector('.add-project-form');
   form.addEventListener('submit', e => {
@@ -16,6 +21,7 @@ const addProject = (projects) => {
     const newProject = new Project(e.target.elements.prTitle.value, e.target.elements.prDesc.value);
     addProjectObjToProjects(newProject, projects);
     addProjectsToLocalStorage(projects);
+    clearFieldOfProject(e);
     renderProjects(projects);
   });
 };
