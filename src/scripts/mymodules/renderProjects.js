@@ -1,12 +1,12 @@
 import removeProject from './removeProject';
-import addTodo from './addTodo';
+import saveTodo from './saveTodo';
 import removeTodo from './removeTodo';
 
-const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
+const generatePrFieldDOM = (inputTitle, inputType, inputName, formClassName, todo) => {
   const prField = document.createElement('div');
   prField.classList.add('project__field');
   const span = document.createElement('span');
-  span.textContent = inputTitle;
+  span.textContent = inputTitle.charAt(0).toUpperCase() + inputTitle.slice(1);
 
   const input = document.createElement('input');
   input.setAttribute('type', inputType);
@@ -16,25 +16,38 @@ const generatePrFieldDOM = (inputTitle, inputType, inputName) => {
   prField.appendChild(span);
   prField.appendChild(input);
 
+  if (formClassName === 'edit-todo-form') {
+    if (inputTitle === 'title') {
+      input.value = todo.title;
+    } else if (inputTitle === 'description') {
+      input.value = todo.description;
+    } else if (inputTitle === 'due') {
+      input.value = todo.dueDate;
+    }
+  }
+
   return prField;
 };
 
-const generateFormDOM = (formClassName, project, projects) => {
+const generateFormDOM = (formClassName, project, projects, todo) => {
   const form = document.createElement('form');
   form.classList.add(formClassName, 'project__form');
-  form.appendChild(generatePrFieldDOM('Title', 'text', 'todoTitle'));
-  form.appendChild(generatePrFieldDOM('Description', 'text', 'todoDesc'));
-  form.appendChild(generatePrFieldDOM('Due', 'date', 'todoDue'));
+  form.appendChild(generatePrFieldDOM('title', 'text', 'todoTitle', formClassName, todo));
+  form.appendChild(generatePrFieldDOM('description', 'text', 'todoDesc', formClassName, todo));
+  form.appendChild(generatePrFieldDOM('due', 'date', 'todoDue', formClassName, todo));
   const prFieldForPriority = document.createElement('div');
   prFieldForPriority.classList.add('project__field');
   prFieldForPriority.innerHTML = `
   <span>Priority:</span>
-  <select name="todoPriority">
+  <select name="todoPriority" class="todo__select__priority">
     <option value="high">High</option>
     <option value="middle">Middle</option>
     <option value="low">Low</option>
   </select>
   `;
+  if (formClassName === 'edit-todo-form') {
+    prFieldForPriority.querySelector('.todo__select__priority').value = todo.priority;
+  }
   form.appendChild(prFieldForPriority);
   const prSaveTodoBtn = document.createElement('button');
   prSaveTodoBtn.setAttribute('type', 'submit');
@@ -44,7 +57,7 @@ const generateFormDOM = (formClassName, project, projects) => {
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    addTodo(e, project, projects);
+    saveTodo(e, project, projects, formClassName, todo);
   });
   return form;
 };
@@ -58,7 +71,7 @@ const generateTodoMoreDOM = (todo, project, projects) => {
   todoDesc.textContent = todo.description;
 
   todoMoreItem.appendChild(todoDesc);
-  todoMoreItem.appendChild(generateFormDOM('edit-todo-form', project, projects));
+  todoMoreItem.appendChild(generateFormDOM('edit-todo-form', project, projects, todo));
 
   return todoMoreItem;
 };
@@ -143,7 +156,7 @@ const generateProjectItemDOM = (project, projects) => {
   prItem.appendChild(prTitle);
   prItem.appendChild(prDesc);
   prItem.appendChild(generatePrTodosDOM(project, projects));
-  prItem.appendChild(generateFormDOM('add-todo-form', project, projects));
+  prItem.appendChild(generateFormDOM('add-todo-form', project, projects, []));
   return prItem;
 };
 

@@ -16,11 +16,19 @@ const clearFieldOfTodo = (e) => {
   e.target.elements.todoPriority.value = '';
 };
 
-const addTodo = (e, project, projects) => {
-  project.todos.push(createNewTodo(e));
+const saveTodo = (e, project, projects, formClassName, todo) => {
+  if (formClassName === 'add-todo-form') {
+    project.todos.push(createNewTodo(e));
+  } else if (formClassName === 'edit-todo-form') {
+    todo.title = e.target.elements.todoTitle.value;
+    todo.description = e.target.elements.todoDesc.value;
+    todo.dueDate = e.target.elements.todoDue.value;
+    todo.priority = e.target.elements.todoPriority.value;
+  }
+
   localStorage.setItem('projects', JSON.stringify(projects));
   clearFieldOfTodo(e);
   window.location.reload();
 };
 
-export default addTodo;
+export default saveTodo;
