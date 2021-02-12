@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst addToggleToMoreBtn = ()
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst getSavedProjectsFromLS = () => {\n  const projectsJSON = localStorage.getItem('projects');\n\n  try {\n    return projectsJSON ? JSON.parse(projectsJSON) : [];\n  } catch (error) {\n    return [];\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getSavedProjectsFromLS);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/getSavedProjectsFromLS.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst getSavedProjectsFromLS = () => {\n  const projectsJSON = localStorage.getItem('projects');\n\n  try {\n    return projectsJSON ? JSON.parse(projectsJSON) : [];\n  } catch (error) {\n    return [];\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getSavedProjectsFromLS); // instead of empty array, can set default value\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/getSavedProjectsFromLS.js?");
 
 /***/ }),
 
