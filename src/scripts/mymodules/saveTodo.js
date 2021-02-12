@@ -1,4 +1,6 @@
 import Todo from './todoConstructor';
+// eslint-disable-next-line import/no-cycle
+import renderProjects from './renderProjects';
 
 const createNewTodo = (e) => {
   const title = e.target.elements.todoTitle.value;
@@ -28,7 +30,8 @@ const saveTodo = (e, project, projects, formClassName, todo) => {
 
   localStorage.setItem('projects', JSON.stringify(projects));
   clearFieldOfTodo(e);
-  window.location.reload();
+  // window.location.reload();
+  renderProjects(projects);
 };
 
 export default saveTodo;

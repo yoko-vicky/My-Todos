@@ -1,5 +1,6 @@
 import removeProject from './removeProject';
 import saveTodo from './saveTodo';
+// eslint-disable-next-line import/no-cycle
 import removeTodo from './removeTodo';
 
 const generatePrFieldDOM = (inputTitle, inputType, inputName, formClassName, todo) => {
@@ -141,7 +142,9 @@ const generateProjectItemDOM = (project, projects) => {
 
   prRmBtn.addEventListener('click', () => {
     removeProject(project.id, projects);
-    window.location.reload();
+    // window.location.reload();
+    // eslint-disable-next-line no-use-before-define
+    renderProjects(projects);
   });
 
   const prTitle = document.createElement('h2');
