@@ -1,5 +1,4 @@
 import '../scss/main.scss';
-// import { formatDistance, subDays } from 'date-fns';
 import getSavedProjectsFromLS from './mymodules/getSavedProjectsFromLS';
 import defaultTodos from './mymodules/defaultTodos';
 import renderProjects from './mymodules/renderProjects';
