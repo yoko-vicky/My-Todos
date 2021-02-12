@@ -7,17 +7,13 @@
   border: 2px solid $light-grey-2;
 
   &.high {
-    background: rgba($color-primary, 0.4);
+    background: $color-primary;
+    color: $white;
   }
 
   &.middle {
-    background: rgba($color-primary, 0.1);
+    background: $color-tertiary;
   }
-
-  // &.low {
-  //   background: $white;
-  //   color: $grey;
-  // }
 
   &__rmbtn {
     position: absolute;
