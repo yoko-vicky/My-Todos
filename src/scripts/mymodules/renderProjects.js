@@ -98,6 +98,9 @@ const generateTodoItemDOM = (todo, project, projects) => {
   todoItem.appendChild(generateTodoMoreDOM(todo, project, projects));
 
   todoRmBtn.addEventListener('click', () => removeTodo(todo, project, projects));
+  todoMoreBtn.addEventListener('click', () => {
+    todoMoreBtn.nextElementSibling.classList.toggle('active');
+  });
 
   return todoItem;
 };

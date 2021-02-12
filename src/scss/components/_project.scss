@@ -9,6 +9,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    font-size: 2rem;
   }
 
   &__title {
@@ -19,30 +20,6 @@
     color: $grey;
     font-size: 1.3rem;
     text-align: left;
-  }
-
-  &__form {
-    display: block;
-    width: 100%;
-    text-align: left;
-    border-radius: 3px;
-    padding: 1.6rem;
-
-    &.add-todo-form {
-      background: rgba($black, 0.2);
-      margin: 1rem auto 2rem;
-    }
-
-    &.edit-todo-form {
-      background: $white;
-      margin: 1rem auto 0;
-    }
-
-    &.add-project-form {
-      width: $basic-width;
-      max-width: 54rem;
-      margin: 0 auto 5rem;
-    }
   }
 
   &__field {
@@ -60,6 +37,44 @@
     textarea {
       width: 100%;
       padding: 0.4rem;
+      background: $white;
+      border-radius: 3px;
+    }
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 3px;
+    padding: 1.6rem;
+
+    &.add-todo-form {
+      background: rgba($black, 0.2);
+      margin: 1rem auto 2rem;
+    }
+
+    &.edit-todo-form {
+      background: $white;
+      margin: 1rem auto 0;
+
+      input,
+      select,
+      textarea {
+        border: 2px solid $light-grey-1;
+      }
+    }
+
+    &.add-project-form {
+      width: $basic-width;
+      max-width: 54rem;
+      margin: 0 auto 5rem;
+
+      input,
+      select,
+      textarea {
+        border: 2px solid $light-grey-1;
+      }
     }
   }
 

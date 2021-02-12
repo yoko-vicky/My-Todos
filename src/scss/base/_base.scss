@@ -34,27 +34,29 @@ img {
   max-width: 100%;
 }
 
-// input,
-// button,
-// textarea {
-//   margin: 0;
-//   padding: 0;
-//   background: none;
-//   border: none;
-//   border-radius: 0;
-//   outline: none;
-//   appearance: none;
-// }
+input,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
 
-// select {
-//   margin: 0;
-//   padding: 0;
-//   background: none;
-//   border: none;
-//   border-radius: 0;
-//   outline: none;
-//   appearance: none;
-// }
+select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  // appearance: none;
+  cursor: pointer;
+}
 
 table {
   border-collapse: collapse;

@@ -1,8 +1,9 @@
-const addToggleToMoreBtn = () => {
-  const todoMoreBtn = document.querySelector('.todo__morebtn');
-  todoMoreBtn.addEventListener('click', () => {
-    todoMoreBtn.nextElementSibling.classList.toggle('active');
-  });
-};
+// const addToggleToMoreBtn = () => {
+//   const todoMoreBtns = document.querySelectorAll('.todo__morebtn');
+//   todoMoreBtn.addEventListener('click', () => {
+//     console.log('working');
 
-export default addToggleToMoreBtn;
+//   });
+// };
+
+// export default addToggleToMoreBtn;
