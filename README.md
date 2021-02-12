@@ -4,7 +4,7 @@
 
 ## About the Project
 
-This project is based on the [Odin Project: Todo List](https://www.theodinproject.com/courses/javascript/lessons/todo-list).
+This project is based on the [Odin Project: Todo List](https://www.theodinproject.com/courses/javascript/lessons/todo-list). In this application, you can create new projects, and inside the project, create todos by setting title, description, due date, and priority. This app is using the local storage in your browser, so after creating to-do lists, if you refresh your browser, you can check your todos while the data is storing in your local storage.
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
@@ -29,7 +29,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka.github.io)
+[Live Demo Link](https://yokosaka-my-todo-app.netlify.app/)
 
 
 ## Getting Started
