@@ -16,7 +16,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _mymodules_addProject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mymodules/addProject */ \"./src/scripts/mymodules/addProject.js\");\n/* harmony import */ var _mymodules_getSavedProjectsFromLS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mymodules/getSavedProjectsFromLS */ \"./src/scripts/mymodules/getSavedProjectsFromLS.js\");\n/* harmony import */ var _mymodules_renderProjects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mymodules/renderProjects */ \"./src/scripts/mymodules/renderProjects.js\");\n // import { formatDistance, subDays } from 'date-fns';\n\n\n\n\nconst projects = (0,_mymodules_getSavedProjectsFromLS__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_mymodules_addProject__WEBPACK_IMPORTED_MODULE_1__.addProject)(projects);\n(0,_mymodules_renderProjects__WEBPACK_IMPORTED_MODULE_3__.default)(projects);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _mymodules_getSavedProjectsFromLS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mymodules/getSavedProjectsFromLS */ \"./src/scripts/mymodules/getSavedProjectsFromLS.js\");\n/* harmony import */ var _mymodules_defaultTodos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mymodules/defaultTodos */ \"./src/scripts/mymodules/defaultTodos.js\");\n/* harmony import */ var _mymodules_renderProjects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mymodules/renderProjects */ \"./src/scripts/mymodules/renderProjects.js\");\n/* harmony import */ var _mymodules_addProject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mymodules/addProject */ \"./src/scripts/mymodules/addProject.js\");\n // import { formatDistance, subDays } from 'date-fns';\n\n\n\n\n\nconst projects = (0,_mymodules_getSavedProjectsFromLS__WEBPACK_IMPORTED_MODULE_1__.default)();\n\nif (projects.length === 0) {\n  localStorage.setItem('projects', JSON.stringify(_mymodules_defaultTodos__WEBPACK_IMPORTED_MODULE_2__.default));\n}\n\n(0,_mymodules_renderProjects__WEBPACK_IMPORTED_MODULE_3__.default)(projects);\n(0,_mymodules_addProject__WEBPACK_IMPORTED_MODULE_4__.addProject)(projects);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/index.js?");
 
 /***/ }),
 
@@ -31,6 +31,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/scripts/mymodules/defaultTodos.js":
+/*!***********************************************!*\
+  !*** ./src/scripts/mymodules/defaultTodos.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst defaultTodos = [{\n  id: 'a6226fde-3ae0-40e6-bc20-ca64a3446159',\n  title: 'My Morning routine',\n  description: 'This is my morning routine',\n  todos: [{\n    id: 'f2a0143c-92ba-4c42-955c-85320f656f1d',\n    title: 'Make some cofee',\n    description: 'I need some coffee in the morning',\n    dueDate: '2021-08-31',\n    priority: 'high',\n    completed: false\n  }, {\n    id: '2e51d05c-9e0b-483e-98d4-431ef84c6395',\n    title: 'My new Todo',\n    description: 'This is my new Todo',\n    dueDate: '2021-02-27',\n    priority: 'middle',\n    completed: false\n  }, {\n    id: 'aad4f35d-6084-434b-b10e-5e75e7d19016',\n    title: 'Clean the room',\n    description: \"I don't like a messy room\",\n    dueDate: '2021-04-30',\n    priority: 'low',\n    completed: false\n  }]\n}, {\n  id: 'ddec606d-7457-437e-bb04-a4fe0ed85720',\n  title: 'My LunchTime Todos',\n  description: 'This is my lunch Time todos',\n  todos: [{\n    id: '79bf4dd1-a783-464e-90ee-f5988546653c',\n    title: 'Eat lunch',\n    description: 'I need to have delicious lunch',\n    dueDate: '2021-02-27',\n    priority: 'middle',\n    completed: false\n  }, {\n    id: '4b5d3d42-c7b9-43bc-ad18-779607845ebe',\n    title: 'Stretch my body',\n    description: 'After working in the morning, I want to stretch my body',\n    dueDate: '2021-03-20',\n    priority: 'high',\n    completed: false\n  }]\n}, {\n  id: 'ebc3f814-f067-43b1-82bd-da69de63037e',\n  title: 'My Evening Routine',\n  description: 'I have a lot of things to do in the evening',\n  todos: [{\n    id: 'bb69f5dc-7032-4297-8087-c9c925ae5d8e',\n    title: 'Cook dinner',\n    description: 'I need to prepare meal for my family members',\n    dueDate: '2021-03-13',\n    priority: 'high',\n    completed: false\n  }, {\n    id: '22ee35b5-73df-48f1-8849-148a3d8b6529',\n    title: 'Read book',\n    description: 'I like reading book',\n    dueDate: '2021-05-30',\n    priority: 'low',\n    completed: false\n  }, {\n    id: 'e2da1d37-c876-41a7-a57c-da6336bb2866',\n    title: 'Sleep well',\n    description: 'Sleeping is really important for me',\n    dueDate: '2021-04-24',\n    priority: 'middle',\n    completed: false\n  }]\n}];\n/* harmony default export */ __webpack_exports__[\"default\"] = (defaultTodos);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/defaultTodos.js?");
+
+/***/ }),
+
 /***/ "./src/scripts/mymodules/getSavedProjectsFromLS.js":
 /*!*********************************************************!*\
   !*** ./src/scripts/mymodules/getSavedProjectsFromLS.js ***!
@@ -38,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst getSavedProjectsFromLS = () => {\n  const projectsJSON = localStorage.getItem('projects');\n\n  try {\n    return projectsJSON ? JSON.parse(projectsJSON) : [];\n  } catch (error) {\n    return [];\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getSavedProjectsFromLS); // instead of empty array, can set default value\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/getSavedProjectsFromLS.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst getSavedProjectsFromLS = () => {\n  const projectsJSON = localStorage.getItem('projects');\n\n  try {\n    return projectsJSON ? JSON.parse(projectsJSON) : [];\n  } catch (error) {\n    return [];\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getSavedProjectsFromLS);\n\n//# sourceURL=webpack://my-todo-list/./src/scripts/mymodules/getSavedProjectsFromLS.js?");
 
 /***/ }),
 

@@ -1,10 +1,15 @@
 import '../scss/main.scss';
 // import { formatDistance, subDays } from 'date-fns';
-import { addProject } from './mymodules/addProject';
 import getSavedProjectsFromLS from './mymodules/getSavedProjectsFromLS';
+import defaultTodos from './mymodules/defaultTodos';
 import renderProjects from './mymodules/renderProjects';
+import { addProject } from './mymodules/addProject';
 
 const projects = getSavedProjectsFromLS();
 
-addProject(projects);
+if (projects.length === 0) {
+  localStorage.setItem('projects', JSON.stringify(defaultTodos));
+}
+
 renderProjects(projects);
+addProject(projects);

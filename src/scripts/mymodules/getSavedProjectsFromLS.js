@@ -8,5 +8,3 @@ const getSavedProjectsFromLS = () => {
 };
 
 export default getSavedProjectsFromLS;
-
-// instead of empty array, can set default value
