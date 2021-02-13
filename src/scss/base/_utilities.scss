@@ -1,20 +1,35 @@
 .btn {
   display: inline-block;
-  background: $black;
-  padding: 0.6rem;
-  color: $white;
+  background: $white;
+  color: $grey;
+  padding: 0.4rem;
   width: 100%;
   margin: 0.6rem auto;
   font-family: inherit;
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid $light-grey-1;
   border-radius: 3px;
   transition: all 0.4s;
 
   &:hover {
-    background: $white;
-    color: $black;
+    background: $black;
+    color: $white;
+  }
+
+  &.add-project-btn,
+  &.add-todo-btn,
+  &.save-todo-btn {
+    background: $black;
+    color: $white;
+    padding: 0.8rem;
+
+    &:hover,
+    &.open {
+      background: $white;
+      color: $black;
+      border-color: $black;
+    }
   }
 }

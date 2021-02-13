@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # My Todo List
-![Top Page Screenshot](./screenshot.png)
+![Top Page Screenshot](./screenshot-n.png)
 
 ## About the Project
 

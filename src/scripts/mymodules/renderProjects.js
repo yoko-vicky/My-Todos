@@ -53,7 +53,7 @@ const generateFormDOM = (formClassName, project, projects, todo) => {
   form.appendChild(prFieldForPriority);
   const prSaveTodoBtn = document.createElement('button');
   prSaveTodoBtn.setAttribute('type', 'submit');
-  prSaveTodoBtn.classList.add('btn');
+  prSaveTodoBtn.classList.add('btn', 'save-todo-btn');
   prSaveTodoBtn.textContent = 'Save Todo';
   form.appendChild(prSaveTodoBtn);
 
@@ -155,11 +155,23 @@ const generateProjectItemDOM = (project, projects) => {
   prDesc.classList.add('project__desc');
   prDesc.textContent = project.description;
 
+  const addTodoBtn = document.createElement('button');
+  addTodoBtn.classList.add('add-todo-btn', 'btn');
+  addTodoBtn.textContent = 'Add Todo';
+
   prItem.appendChild(prRmBtn);
   prItem.appendChild(prTitle);
   prItem.appendChild(prDesc);
   prItem.appendChild(generatePrTodosDOM(project, projects));
+  prItem.appendChild(addTodoBtn);
   prItem.appendChild(generateFormDOM('add-todo-form', project, projects, []));
+
+  addTodoBtn.addEventListener('click', e => {
+    e.target.nextElementSibling.classList.toggle('open');
+    e.target.classList.toggle('open');
+    // eslint-disable-next-line no-unused-expressions
+    e.target.textContent === 'Add Todo' ? e.target.textContent = 'Close' : e.target.textContent = 'Add Todo';
+  });
   return prItem;
 };
 

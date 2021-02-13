@@ -51,8 +51,13 @@
     padding: 1.6rem;
 
     &.add-todo-form {
+      display: none;
       background: rgba($black, 0.2);
       margin: 1rem auto 2rem;
+
+      &.open {
+        display: block;
+      }
     }
 
     &.edit-todo-form {
