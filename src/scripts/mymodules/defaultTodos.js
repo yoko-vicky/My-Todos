@@ -1,6 +1,6 @@
 const defaultTodos = [{
   id: 'a6226fde-3ae0-40e6-bc20-ca64a3446159',
-  title: 'My Morning routine',
+  title: 'My Morning Routine',
   description: 'This is my morning routine',
   todos: [{
     id: 'f2a0143c-92ba-4c42-955c-85320f656f1d', title: 'Make some cofee', description: 'I need some coffee in the morning', dueDate: '2021-08-31', priority: 'high', completed: false,
