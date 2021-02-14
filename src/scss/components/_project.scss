@@ -1,5 +1,6 @@
 .project {
-  border: 5px solid $light-grey-1;
+  border: 5px solid $light-grey-2;
+  background-color: $light-grey-2;
   border-radius: 3px;
   text-align: center;
   padding: 2rem;
@@ -13,7 +14,10 @@
   }
 
   &__title {
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
   }
 
   &__desc {

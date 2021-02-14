@@ -1,18 +1,36 @@
 .todo {
   position: relative;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   background: $light-grey-2;
   margin: 0 auto 1rem;
   border: 2px solid $light-grey-2;
+  border-radius: 3px;
 
   &.high {
     background: $color-primary;
     color: $white;
+
+    .btn {
+      color: $white;
+
+      &:hover {
+        color: $black;
+      }
+    }
   }
 
   &.middle {
     background: $color-tertiary;
+  }
+
+  &.low {
+    background: $white;
+
+    &:hover {
+      background: $light-grey-2;
+      color: $black;
+    }
   }
 
   &__rmbtn {
@@ -39,7 +57,7 @@
   }
 
   &__title {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     margin: 0 0 0.4rem;
     line-height: 1;
   }

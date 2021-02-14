@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
-  background: $white;
-  color: $grey;
+  background: none;
+  color: $black;
   padding: 0.4rem;
   width: 100%;
   margin: 0.6rem auto;
@@ -9,13 +9,12 @@
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid $light-grey-1;
   border-radius: 3px;
   transition: all 0.4s;
 
   &:hover {
-    background: $black;
-    color: $white;
+    background: $white;
+    color: $black;
   }
 
   &.add-project-btn,
@@ -23,13 +22,14 @@
   &.save-todo-btn {
     background: $black;
     color: $white;
+    border: 2px solid transparent;
     padding: 0.8rem;
 
     &:hover,
     &.open {
       background: $white;
       color: $black;
-      border-color: $black;
+      border-color: $light-grey-1;
     }
   }
 }

@@ -1,5 +1,6 @@
 html {
-  font-size: 50%; // 1rem = 8px (8/16)
+  // font-size: 50%; // 1rem = 8px (8/16)
+  font-size: 62.5%; // 1rem = 8px (8/16)
 
   @include mq(tab) {
     font-size: 62.5%; // 1rem = 10px (10/16)
