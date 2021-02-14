@@ -117,6 +117,13 @@ const generateTodoItemDOM = (todo, project, projects) => {
     todoMoreBtn.nextElementSibling.classList.toggle('active');
   });
 
+  todoCompCheckbox.addEventListener('change', e => {
+    todo.completed = e.target.checked;
+    localStorage.setItem('projects', JSON.stringify(projects));
+    // eslint-disable-next-line no-use-before-define
+    renderProjects(projects);
+  });
+
   return todoItem;
 };
 
