@@ -33,3 +33,4 @@ node_modules/
 .env
 /memo
 /package-lock.json
+yarn.lock
