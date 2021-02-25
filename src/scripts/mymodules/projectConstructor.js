@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 class Project {
   constructor(title, description) {
     // eslint-disable-next-line no-undef
