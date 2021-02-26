@@ -1,7 +1,7 @@
 import createElement from './utills';
 import removeProject from './removeProject';
 // eslint-disable-next-line import/no-cycle
-import saveTodo from './saveTodo';
+import { saveTodo } from './saveTodo';
 // eslint-disable-next-line import/no-cycle
 import removeTodo from './removeTodo';
 
@@ -58,6 +58,8 @@ const generateFormDOM = (formClassName, project, projects, todo) => {
   form.addEventListener('submit', e => {
     e.preventDefault();
     saveTodo(e, project, projects, formClassName, todo);
+    // eslint-disable-next-line no-use-before-define
+    renderProjects(projects);
   });
   return form;
 };

@@ -1,7 +1,6 @@
 import getSavedProjectsFromLS from '../src/scripts/mymodules/getSavedProjectsFromLS';
 
 test('should return the default project data if it exists', () => {
-
   // eslint-disable-next-line no-unused-expressions
   const projects = {
     id: 'abcdedg-12345',
