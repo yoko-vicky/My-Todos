@@ -1,5 +1,5 @@
 import Project from './projectConstructor';
-import renderProjects from './renderProjects';
+import { renderProjects } from './renderProjects';
 
 const addProjectObjToProjects = (project, projects) => {
   projects.push(project);

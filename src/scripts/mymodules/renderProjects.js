@@ -158,12 +158,14 @@ const generateProjectItemDOM = (project, projects) => {
   return prItem;
 };
 
-const projectsContainer = document.getElementById('projects');
 const renderProjects = (projects) => {
-  projectsContainer.innerHTML = '';
+  document.getElementById('projects').innerHTML = '';
   projects.forEach(project => {
-    projectsContainer.appendChild(generateProjectItemDOM(project, projects));
+    document.getElementById('projects').appendChild(generateProjectItemDOM(project, projects));
   });
 };
 
-export default renderProjects;
+export {
+  // eslint-disable-next-line max-len
+  generatePrFieldDOM, generateFormDOM, generateTodoMoreDOM, generateTodoItemDOM, generatePrTodosDOM, generateProjectItemDOM, renderProjects,
+};

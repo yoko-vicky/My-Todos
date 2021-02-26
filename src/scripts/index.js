@@ -1,7 +1,7 @@
 import '../scss/main.scss';
 import getSavedProjectsFromLS from './mymodules/getSavedProjectsFromLS';
 import defaultTodos from './mymodules/defaultTodos';
-import renderProjects from './mymodules/renderProjects';
+import { renderProjects } from './mymodules/renderProjects';
 import { addProject } from './mymodules/addProject';
 
 const projects = getSavedProjectsFromLS();
