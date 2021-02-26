@@ -1,4 +1,7 @@
-import { generatePrFieldDOM, generateFormDOM, generateTodoMoreDOM, generateTodoItemDOM, generatePrTodosDOM, generateProjectItemDOM, renderProjects } from '../src/scripts/mymodules/renderProjects';
+import {
+  // eslint-disable-next-line max-len
+  generatePrFieldDOM, generateFormDOM, generateTodoMoreDOM, generateTodoItemDOM, generatePrTodosDOM, generateProjectItemDOM, renderProjects,
+} from '../src/scripts/mymodules/renderProjects';
 
 const projects = [{
   id: '12345678-xyz',

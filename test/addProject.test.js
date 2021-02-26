@@ -10,7 +10,6 @@ const project = {
 let event;
 
 describe('Test addProject', () => {
-
   beforeEach(() => {
     localStorage.removeItem('projects');
     event = {
