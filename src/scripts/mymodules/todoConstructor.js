@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { v4 as uuidv4 } from 'uuid';
 
 class Todo {

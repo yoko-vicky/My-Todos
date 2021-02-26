@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import Project from '../src/scripts/mymodules/ProjectConstructor';
+import Project from '../src/scripts/mymodules/projectConstructor';
 
 // jest.mock('uuid');
 test('should create Project object with given arguments including title, description, dueDate, priority', () => {
