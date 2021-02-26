@@ -26,4 +26,6 @@ const addProject = (projects) => {
   });
 };
 
-export { addProject, addProjectObjToProjects, addProjectsToLocalStorage };
+export {
+  addProject, addProjectObjToProjects, addProjectsToLocalStorage, clearFieldOfProject
+};

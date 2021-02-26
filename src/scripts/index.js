@@ -10,5 +10,5 @@ if (projects.length === 0) {
   localStorage.setItem('projects', JSON.stringify(defaultTodos));
 }
 
-renderProjects(projects);
 addProject(projects);
+renderProjects(projects);
