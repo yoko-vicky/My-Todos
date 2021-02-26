@@ -1,14 +1,13 @@
+import createElement from './utills';
 import removeProject from './removeProject';
 // eslint-disable-next-line import/no-cycle
-import saveTodo from './saveTodo';
+import { saveTodo } from './saveTodo';
 // eslint-disable-next-line import/no-cycle
 import removeTodo from './removeTodo';
 
 const generatePrFieldDOM = (inputTitle, inputType, inputName, formClassName, todo) => {
-  const prField = document.createElement('div');
-  prField.classList.add('project__field');
-  const span = document.createElement('span');
-  span.textContent = inputTitle.charAt(0).toUpperCase() + inputTitle.slice(1);
+  const prField = createElement('div', 'project__field');
+  const span = createElement('span', null, inputTitle.charAt(0).toUpperCase() + inputTitle.slice(1));
 
   const input = document.createElement('input');
   input.setAttribute('type', inputType);
@@ -32,13 +31,12 @@ const generatePrFieldDOM = (inputTitle, inputType, inputName, formClassName, tod
 };
 
 const generateFormDOM = (formClassName, project, projects, todo) => {
-  const form = document.createElement('form');
-  form.classList.add(formClassName, 'project__form');
+  const form = createElement('form', formClassName);
+  form.classList.add('project__form');
   form.appendChild(generatePrFieldDOM('title', 'text', 'todoTitle', formClassName, todo));
   form.appendChild(generatePrFieldDOM('description', 'text', 'todoDesc', formClassName, todo));
   form.appendChild(generatePrFieldDOM('due', 'date', 'todoDue', formClassName, todo));
-  const prFieldForPriority = document.createElement('div');
-  prFieldForPriority.classList.add('project__field');
+  const prFieldForPriority = createElement('div', 'project__field');
   prFieldForPriority.innerHTML = `
   <span>Priority:</span>
   <select name="todoPriority" class="todo__select__priority">
@@ -51,27 +49,24 @@ const generateFormDOM = (formClassName, project, projects, todo) => {
     prFieldForPriority.querySelector('.todo__select__priority').value = todo.priority;
   }
   form.appendChild(prFieldForPriority);
-  const prSaveTodoBtn = document.createElement('button');
+
+  const prSaveTodoBtn = createElement('button', 'btn', 'Save Todo');
   prSaveTodoBtn.setAttribute('type', 'submit');
-  prSaveTodoBtn.classList.add('btn', 'save-todo-btn');
-  prSaveTodoBtn.textContent = 'Save Todo';
+  prSaveTodoBtn.classList.add('save-todo-btn');
   form.appendChild(prSaveTodoBtn);
 
   form.addEventListener('submit', e => {
     e.preventDefault();
     saveTodo(e, project, projects, formClassName, todo);
+    // eslint-disable-next-line no-use-before-define
+    renderProjects(projects);
   });
   return form;
 };
 
 const generateTodoMoreDOM = (todo, project, projects) => {
-  const todoMoreItem = document.createElement('div');
-  todoMoreItem.classList.add('todo__more');
-
-  const todoDesc = document.createElement('p');
-  todoDesc.classList.add('todo__desc');
-  todoDesc.textContent = todo.description;
-
+  const todoMoreItem = createElement('div', 'todo__more');
+  const todoDesc = createElement('p', 'todo__desc', todo.description);
   todoMoreItem.appendChild(todoDesc);
   todoMoreItem.appendChild(generateFormDOM('edit-todo-form', project, projects, todo));
 
@@ -79,32 +74,21 @@ const generateTodoMoreDOM = (todo, project, projects) => {
 };
 
 const generateTodoItemDOM = (todo, project, projects) => {
-  const todoItem = document.createElement('div');
-  todoItem.classList.add('todo', todo.priority);
+  const todoItem = createElement('div', 'todo');
+  todoItem.classList.add(todo.priority);
 
-  const todoRmBtn = document.createElement('button');
-  todoRmBtn.classList.add('todo__rmbtn');
-  todoRmBtn.textContent = 'x';
-
-  const todoDue = document.createElement('div');
-  todoDue.classList.add('todo__due');
-  todoDue.textContent = todo.dueDate;
-
-  const todoTitleCover = document.createElement('div');
-  todoTitleCover.classList.add('todo__title-cover');
-  const todoCompCheckbox = document.createElement('input');
+  const todoRmBtn = createElement('button', 'todo__rmbtn', 'x');
+  const todoDue = createElement('div', 'todo__due', todo.dueDate);
+  const todoTitleCover = createElement('div', 'todo__title-cover');
+  const todoCompCheckbox = createElement('input', 'todo__comp-checkbox');
   todoCompCheckbox.setAttribute('type', 'checkbox');
-  todoCompCheckbox.classList.add('todo__comp-checkbox');
   todoCompCheckbox.checked = todo.completed;
-  const todoTitle = document.createElement('h3');
-  todoTitle.classList.add('todo__title');
-  todoTitle.textContent = todo.title;
+  const todoTitle = createElement('h3', 'todo__title', todo.title);
   todoTitleCover.appendChild(todoCompCheckbox);
   todoTitleCover.appendChild(todoTitle);
 
-  const todoMoreBtn = document.createElement('button');
-  todoMoreBtn.classList.add('todo__morebtn', 'btn');
-  todoMoreBtn.textContent = 'More';
+  const todoMoreBtn = createElement('button', 'btn', 'More');
+  todoMoreBtn.classList.add('todo__morebtn');
 
   todoItem.appendChild(todoRmBtn);
   todoItem.appendChild(todoDue);
@@ -112,7 +96,11 @@ const generateTodoItemDOM = (todo, project, projects) => {
   todoItem.appendChild(todoMoreBtn);
   todoItem.appendChild(generateTodoMoreDOM(todo, project, projects));
 
-  todoRmBtn.addEventListener('click', () => removeTodo(todo, project, projects));
+  todoRmBtn.addEventListener('click', () => {
+    removeTodo(todo, project, projects);
+    // eslint-disable-next-line no-use-before-define
+    renderProjects(projects);
+  });
   todoMoreBtn.addEventListener('click', () => {
     todoMoreBtn.nextElementSibling.classList.toggle('active');
   });
@@ -128,8 +116,7 @@ const generateTodoItemDOM = (todo, project, projects) => {
 };
 
 const generatePrTodosDOM = (project, projects) => {
-  const projectTodos = document.createElement('div');
-  projectTodos.classList.add('project__todos');
+  const projectTodos = createElement('div', 'project__todos');
 
   if (project.todos.length > 0) {
     project.todos.forEach(todo => {
@@ -141,12 +128,8 @@ const generatePrTodosDOM = (project, projects) => {
 };
 
 const generateProjectItemDOM = (project, projects) => {
-  const prItem = document.createElement('div');
-  prItem.classList.add('project');
-
-  const prRmBtn = document.createElement('button');
-  prRmBtn.classList.add('project__rmbtn');
-  prRmBtn.textContent = 'x';
+  const prItem = createElement('div', 'project');
+  const prRmBtn = createElement('button', 'project__rmbtn', 'x');
 
   prRmBtn.addEventListener('click', () => {
     removeProject(project.id, projects);
@@ -154,17 +137,10 @@ const generateProjectItemDOM = (project, projects) => {
     renderProjects(projects);
   });
 
-  const prTitle = document.createElement('h2');
-  prTitle.classList.add('project__title');
-  prTitle.textContent = project.title;
-
-  const prDesc = document.createElement('div');
-  prDesc.classList.add('project__desc');
-  prDesc.textContent = project.description;
-
-  const addTodoBtn = document.createElement('button');
-  addTodoBtn.classList.add('add-todo-btn', 'btn');
-  addTodoBtn.textContent = 'Add Todo';
+  const prTitle = createElement('h2', 'project__title', project.title);
+  const prDesc = createElement('div', 'project__desc', project.description);
+  const addTodoBtn = createElement('button', 'btn', 'Add Todo');
+  addTodoBtn.classList.add('add-todo-btn');
 
   prItem.appendChild(prRmBtn);
   prItem.appendChild(prTitle);
@@ -182,12 +158,14 @@ const generateProjectItemDOM = (project, projects) => {
   return prItem;
 };
 
-const projectsContainer = document.getElementById('projects');
 const renderProjects = (projects) => {
-  projectsContainer.innerHTML = '';
+  document.getElementById('projects').innerHTML = '';
   projects.forEach(project => {
-    projectsContainer.appendChild(generateProjectItemDOM(project, projects));
+    document.getElementById('projects').appendChild(generateProjectItemDOM(project, projects));
   });
 };
 
-export default renderProjects;
+export {
+  // eslint-disable-next-line max-len
+  generatePrFieldDOM, generateFormDOM, generateTodoMoreDOM, generateTodoItemDOM, generatePrTodosDOM, generateProjectItemDOM, renderProjects,
+};

@@ -1,5 +1,5 @@
 import Project from './projectConstructor';
-import renderProjects from './renderProjects';
+import { renderProjects } from './renderProjects';
 
 const addProjectObjToProjects = (project, projects) => {
   projects.push(project);
@@ -26,4 +26,6 @@ const addProject = (projects) => {
   });
 };
 
-export { addProject, addProjectObjToProjects, addProjectsToLocalStorage };
+export {
+  addProject, addProjectObjToProjects, addProjectsToLocalStorage, clearFieldOfProject
+};
