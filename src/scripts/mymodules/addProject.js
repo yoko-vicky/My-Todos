@@ -10,15 +10,17 @@ const addProjectsToLocalStorage = (projects) => {
 };
 
 const clearFieldOfProject = (e) => {
-  e.target.elements.prTitle.value = '';
-  e.target.elements.prDesc.value = '';
+  const { elements } = e.target;
+  elements.prTitle.value = '';
+  elements.prDesc.value = '';
 };
 
 const addProject = (projects) => {
   const form = document.querySelector('.add-project-form');
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const newProject = new Project(e.target.elements.prTitle.value, e.target.elements.prDesc.value);
+    const { elements } = e.target;
+    const newProject = new Project(elements.prTitle.value, elements.prDesc.value);
     addProjectObjToProjects(newProject, projects);
     addProjectsToLocalStorage(projects);
     clearFieldOfProject(e);
